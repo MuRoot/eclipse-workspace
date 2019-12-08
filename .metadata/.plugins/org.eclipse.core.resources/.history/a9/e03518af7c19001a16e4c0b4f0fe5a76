@@ -1,0 +1,15 @@
+package com.ziki.server.mode;
+
+import java.net.Socket;
+import java.util.HashMap;
+
+public class ClientBox 
+{
+	static HashMap<String, Socket> map = new HashMap<String, Socket>();
+	
+	public static void addClient(String Id,Socket socket) 
+	{
+		map.put(Id, socket);
+		return true;
+	}
+}

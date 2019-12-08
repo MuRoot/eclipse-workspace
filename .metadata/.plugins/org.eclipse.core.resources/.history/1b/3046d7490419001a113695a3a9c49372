@@ -1,0 +1,8 @@
+package com.ziki.client.mode;
+
+public class clientLoginCheck {
+	public clientLoginCheck() {
+		// TODO Auto-generated constructor stub
+		
+	}
+}

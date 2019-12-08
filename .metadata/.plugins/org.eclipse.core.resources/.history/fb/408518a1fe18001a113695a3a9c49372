@@ -1,0 +1,132 @@
+package com.ziki.client.view;
+
+import javax.swing.*;
+import java.awt.Color;
+import java.awt.event.*;
+import java.awt.*;
+
+public class mainGUI {
+	// �����������Ѳ���д��
+	JFrame f = new JFrame("ZIKI");
+	JPanel main_top, main_central, main_bottom;
+
+	// ���嶥���Ĳ���
+	JPanel left_image;
+	JPanel right_label;
+	JLabel left_image_label;
+	JLabel right_label_top, right_label_bottom;
+	Box vertical = Box.createVerticalBox();
+	// �����в�����
+	JTabbedPane guide;
+	JScrollPane scrollBar;
+	JPanel main_central_topMenu;
+	JPanel main_central_box;
+	// ����ײ�����
+
+	// ���������
+	Button b1 = new Button("查找好友");
+	String[] name = { "Bob", "Jerry", "Tom" };
+
+	mainGUI() {
+		// �����������
+		main_top = new JPanel();
+		left_image = new JPanel();
+		left_image_label = new JLabel(new ImageIcon("images/boy.png"));
+		left_image.add(left_image_label);
+		main_top.add(left_image);
+
+		right_label = new JPanel();
+		right_label_top = new JLabel("cico");
+		// right_label_top.setForeground(Color.green);
+		right_label_top.setFont(new Font("��Բ", Font.BOLD, 20));
+		right_label_bottom = new JLabel("welcome to ziki");
+		vertical.add(right_label_top);
+		vertical.add(right_label_bottom);
+		right_label.add(vertical);
+		main_top.add(right_label);
+
+		// �����в����
+		GridLayout c = new GridLayout(50, 1);
+
+		// scrollBar.add(main_central_box);
+		main_central_box = new JPanel(c);
+		scrollBar = new JScrollPane(main_central_box);
+
+		// main_central = new JPanel();
+		// main_central.add(scrollBar);
+		JLabel[] b = new JLabel[30];
+
+		for (int i = 1; i < b.length; i++) {
+			JPanel bc = new JPanel();
+			b[i] = new JLabel(i + "", new ImageIcon("images/QQ.png"), JLabel.LEFT);
+			JLabel a = new JLabel("name(2020498977)");
+			a.setFont(new Font("��Բ", Font.BOLD, 14));
+			bc.add(b[i]);
+			bc.add(a);
+			main_central_box.add(bc);
+
+			// ����¼������¼�
+			bc.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseEntered(MouseEvent m) {
+					bc.setBackground(new Color(200, 200, 200));
+				}
+
+				public void mouseExited(MouseEvent m) {
+					bc.setBackground(new Color(238, 238, 238));
+				}
+
+			});
+			b[i].addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent m) {
+					String friendNo = ((JLabel) m.getSource()).getText();
+					System.out.println(friendNo);
+					new chatDialog(name[1]);
+				}
+			});
+
+		}
+
+		// �����ײ����
+		main_bottom = new JPanel();
+
+		Button b2 = new Button("add");
+		Button b3 = new Button("系统设置");
+		main_bottom.add(b1);
+		main_bottom.add(b2);
+		main_bottom.add(b3);
+
+		f.add(scrollBar);
+		f.add(main_bottom, "South");
+		f.add(main_top, "North");
+
+		f.setIconImage(new ImageIcon("images/logo.png").getImage());
+		f.setBounds(1300, 100, 300, 800);
+		// f.setLocationRelativeTo(null);
+		f.setVisible(true);
+
+	}
+
+	public void eventListener() {
+		f.addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+			}
+		});
+
+		b1.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				new chatDialog(name[0]);
+			}
+		});
+
+	}
+
+	public static void main(String[] args) {
+		new mainGUI().eventListener();
+	}
+}

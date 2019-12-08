@@ -1,0 +1,54 @@
+package com.ziki.client.mode;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+import com.ziki.common.Message;
+import com.ziki.common.User;;
+/*
+ *	客户端请求服务端连接 
+ * */
+public class clientSendServer{
+	
+	public void sendLoginInfoToServer() {
+		Socket s = null;
+		try {
+			s = new Socket("localhost",5555);
+			ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
+			User u = new User();
+			oos.writeObject(u);
+			
+			ObjectInputStream ois = new ObjectInputStream(s.getInputStream());
+			
+			Message message = (Message)ois.readObject();
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (ClassNotFoundException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}finally {
+			try {
+				if ( s != null) {
+					s.close();
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		clientSendServer c = new clientSendServer();
+		c.sendLoginInfoToServer();
+	}
+}

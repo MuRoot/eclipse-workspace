@@ -1,0 +1,34 @@
+package com.ziki.client.view;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class loginGUI {
+	
+		public loginGUI() {
+			// TODO Auto-generated constructor stub
+		
+		JFrame f = new JFrame("hello");
+		JTextField jf1 = new JTextField(20);
+		JTextField jf2 = new JTextField(20);
+		JButton b = new JButton("登录");
+		
+		f.add(jf1,"North");
+		f.add(jf2);
+		f.add(b,"South");
+		
+		
+		
+		f.pack();
+		f.setLocationRelativeTo(null);
+		f.setVisible(true);
+		
+	}
+	public static void main(String[] args) {
+		new loginGUI();
+	}
+}

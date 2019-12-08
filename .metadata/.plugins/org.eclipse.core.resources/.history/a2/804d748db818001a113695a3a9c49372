@@ -1,0 +1,22 @@
+public class µÚ39¼¶Ì¨½× {
+	public static int count = 0;
+
+	public static void main(String[] args) 
+	{
+		dfs(3, 0);
+		
+		System.out.println("Ó‹”µ£º" + count);
+	}
+
+	private static void dfs(int n, int step) 
+	{
+		if (n < 0) {
+			return;
+		}
+		if (n == 0 && step % 2 == 0) {
+			count++;
+		}
+		dfs(n - 1, step + 1);
+		dfs(n - 2, step + 1);
+	}
+}

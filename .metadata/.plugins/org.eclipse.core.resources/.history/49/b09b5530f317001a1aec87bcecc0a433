@@ -1,0 +1,24 @@
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+
+import javax.swing.JFrame;
+
+public class Test extends JFrame
+{
+	public Test() 
+	{
+		this.setSize(1000, 600);
+		this.setVisible(true);
+		this.addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+			}
+		});
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,38 @@
+package com.ziki.client.view;
+
+
+import javax.swing.*;
+import java.awt.Color;
+public class chatGUI{
+	JFrame f; //窗口
+	JPanel jp; //创建容器
+
+	JLabel jl,jl1,jl2,jl3;
+
+	chatGUI(){
+		f = new JFrame("Ploto");
+		f.setLayout(null);
+
+		jl = new JLabel(new ImageIcon("../images/22.jfif"));
+		jl.setBounds(0,0,346,131);
+		jl.setForeground(Color.blue);
+
+		jp = new JPanel();
+		jl1 = new JLabel("消 息");
+		jl2 = new JLabel("联系人");
+		jl3 = new JLabel("空 间");
+
+		jp.add(jl1);
+		jp.add(jl2);
+		jp.add(jl3);
+
+
+		f.add(jl);
+		f.add(jp);
+
+		f.setResizable(false);
+		f.setBounds(1300,50,346,950);
+		f.setVisible(true);
+	}
+
+}

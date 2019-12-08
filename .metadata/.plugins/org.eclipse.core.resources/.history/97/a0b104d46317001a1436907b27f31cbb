@@ -1,0 +1,9 @@
+package com.ziki.client.mode;
+
+import com.ziki.client.common.*;
+
+public class clientSend {
+	public static void main(String[] args) {
+		User u = new User();
+	}
+}

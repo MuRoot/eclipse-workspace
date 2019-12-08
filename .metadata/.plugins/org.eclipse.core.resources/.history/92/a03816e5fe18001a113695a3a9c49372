@@ -1,0 +1,21 @@
+/*
+ * ab * cde = adb * ce;
+ * 123456789 ~ 987654321
+ * */
+public class î}Ä¿ 
+{
+	public static void main(String[] args) 
+	{
+		new î}Ä¿().fun(100);
+	}
+
+	private void fun(int value) 
+	{
+		if(value == 10) {
+			return; 
+		}else {
+			fun(value+1);
+		}
+		System.out.println(value);
+	}
+}

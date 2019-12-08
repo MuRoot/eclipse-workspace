@@ -1,0 +1,10 @@
+import javax.swing.JOptionPane;
+
+public class Test{
+	
+	JOptionPane j = new JOptionPane
+	
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,44 @@
+package com.ziki.client.view;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class loginGUI {
+	JFrame f = null;
+	JPanel p;
+	JButton jb = null;
+	JTextField jf = null;
+	JPasswordField pf = null;
+	JLabel l = null;
+
+	public loginGUI() {
+
+		f = new JFrame("ZIKI");
+		jf = new JTextField(30);
+		pf = new JPasswordField(30);
+		jb = new JButton("登 录");
+
+		p = new JPanel();
+		p.setSize(40, 40);
+		p.add(jf);
+		p.add(pf);
+		SetupMon obj = new SetupMon(tf, f);
+		this.addKeyListener(obj);
+
+		f.add(p);
+		f.add(pf);
+		f.add(jb, "South");
+		f.setLocationRelativeTo(null);
+		f.setSize(400, 300);
+		f.setVisible(true);
+
+	}
+
+	public static void main(String[] args) {
+		loginGUI l = new loginGUI();
+	}
+}

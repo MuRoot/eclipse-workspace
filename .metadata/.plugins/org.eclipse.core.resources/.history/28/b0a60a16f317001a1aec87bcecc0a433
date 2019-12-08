@@ -1,0 +1,14 @@
+import javax.swing.JFrame;
+
+public class Test extends JFrame
+{
+	public Test() 
+	{
+		this.setSize(1000, 600);
+		this.setVisible(true);
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+}

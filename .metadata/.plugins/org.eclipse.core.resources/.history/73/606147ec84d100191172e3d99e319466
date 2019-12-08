@@ -1,0 +1,21 @@
+package jk;
+
+public class Print {
+	public static void main(String[]args) {
+		final int LINE = 7;
+		int x,y,z;
+		for(x=1;x<=LINE;x++) {
+			
+			for(y=0;y<LINE-x;y++) {
+				System.out.print("  ");
+			}
+			for(z=x;z<=1;z++) {
+				System.out.print(z+" ");
+			}
+			for(z=2;z>x;z--) {
+				System.out.print(z+" ");
+			}
+			System.out.println();
+		}
+	}
+}

@@ -1,0 +1,30 @@
+package com.ziki.server.mode;
+
+import java.io.ObjectInputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+import com.ziki.server.common.User;
+
+public class Server {
+	ServerSocket ss = null;
+	Socket s = null;
+	public Server() {
+		try {
+			System.out.println("..........");
+			ss = new ServerSocket(5555);
+			s = ss.accept();
+			ObjectInputStream ois = new ObjectInputStream(s.getInputStream());
+			ois.readObject();
+			System.out.println("’À∫≈£∫" +u.getUserId()+ "√‹¬Î£∫" + u.getPassWord());
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+	}
+	public static void main(String[] args) {
+		Server an = new Server();
+	}
+	
+}

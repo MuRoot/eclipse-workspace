@@ -1,0 +1,10 @@
+public class µÚ39¼¶Ì¨½× 
+{
+	public static void main(String[] args) {
+		dfs(39, 0);
+	}
+
+	private static void dfs() {
+		 
+	}
+}

@@ -1,0 +1,6 @@
+package com.ziki.server.mode;
+
+public class ClientBox 
+{
+
+}

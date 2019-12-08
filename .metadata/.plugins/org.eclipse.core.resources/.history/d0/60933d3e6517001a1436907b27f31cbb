@@ -1,0 +1,5 @@
+package com.ziki.server.common;
+
+public class User {
+
+}

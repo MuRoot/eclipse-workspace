@@ -1,0 +1,13 @@
+import java.io.File;
+
+public class DiGui {
+	public static void main(String[] args) 
+	{
+		String path = "D:\\";
+		Traverse();
+	}
+
+	private static void Traverse() 
+	{
+	}
+}

@@ -1,0 +1,43 @@
+package jk;
+
+import java.util.Scanner;
+
+public class Test {
+		//char u =' ';
+		String i;
+		void print() {
+			//局部变量是不加修饰符的；没有实际意义
+			int x = 4;
+			System.out.print(x);
+		}
+	
+	public static void main(String[] args) {
+		//按位异的加密算法
+		Test t= new Test();
+		t.print();
+		
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in);
+		//输入要加密的字符串
+		String words = in.nextLine();
+		
+		//将字符串转变 成字符数组
+		char[] arry = words.toCharArray();
+		
+		//加密字符 'x'
+		
+		char sercet = 'x';
+		
+		for(int i =0;i<arry.length;i++) {
+			arry[i] = (char)(sercet^arry[i]);
+		}
+		
+		System.out.println(arry);
+		for(int i =0;i<arry.length;i++) {
+			arry[i] = (char)(sercet^arry[i]);
+		}
+		System.out.print(arry);
+		
+	}
+
+}

@@ -1,0 +1,19 @@
+package com.ziki.client.mode;
+
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+
+import com.ziki.client.common.*;
+
+public class clientSendServer{
+	
+	public void sendLoginInfoToServer(Object o) {
+		Socket s = new Socket();
+		ObjectOutputStream oos = new ObjectOutputStream();
+	}
+	
+	
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,21 @@
+import java.util.HashSet;
+import java.util.Set;
+
+public class Test 
+{
+	public static void main(String[] args) 
+	{
+		/* * * * * * * * * * * * * * * * *
+			a b c d e
+			Âú×ã£ºab * cde = abd * ce
+			1,2,3,4,5,6,7,8,9 -> 5
+			MIN : 123456789
+			MAX : 987654321
+		* * * * * * * * * * * * * * * * * */
+		Set<Long> set = new HashSet<Long>();
+		for (long i = 123456789; i <= 987654321; i++) 
+		{
+			
+		}
+	}
+}

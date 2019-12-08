@@ -1,0 +1,16 @@
+import java.io.File;
+
+public class DiGui 
+{
+	public static void main(String[] args) 
+	{
+		Traverse("Path" , 0);
+	}
+
+	private static void Traverse(String path, int depth) 
+	{
+		File sf = new File(path);
+		File[] fls = sf.listFiles();
+		
+	}
+}

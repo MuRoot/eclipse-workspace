@@ -1,0 +1,22 @@
+import java.io.File;
+
+public class DiGui 
+{
+	public static void main(String[] args) 
+	{
+		Traverse("Path" , 0);
+	}
+
+	private static void Traverse(String path, int depth) 
+	{
+		File sf = new File(path);
+		if(sf.exists())
+		{
+			File[] files = sf.listFiles();
+			for(File fi : files)
+			{
+				
+			}
+		}
+	}
+}

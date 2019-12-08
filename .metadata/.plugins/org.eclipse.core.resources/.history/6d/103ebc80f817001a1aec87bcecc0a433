@@ -1,0 +1,26 @@
+import java.io.File;
+
+public class DiGui {
+	public static void main(String[] args) 
+	{
+		String path = "D:\\test";
+		Traverse(path, 0);
+	}
+
+	private static void Traverse(String path, int depth) 
+	{
+		File f = new File(path);
+		if(f.exists())
+		{
+			File[] fils = f.listFiles();
+			for(File fv : fils)
+			{
+				if(fv.isDirectory()) {
+					Traverse(fv.getAbsolutePath(), (depth+1));
+				}else {
+					System.out.println(fv.getName());
+				}
+			}
+		}
+	}
+}

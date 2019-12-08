@@ -1,0 +1,86 @@
+package com.ziki.client.mode;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+import com.ziki.common.Message;
+import com.ziki.common.User;;
+/*
+ *	客户端请求服务端连接 
+ * */
+public class clientSendServer{
+	//发送第一次登录请求
+	public String sendLoginInfoToServer(Object o) {
+			String isLogin = "2";
+			try {
+				Socket s = new Socket("localhost",5555);
+				//发送用户登录信息给服务福安验证
+				ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
+				oos.writeObject(o);
+				//接收服务端的验证结果
+				ObjectInputStream ois = new ObjectInputStream(s.getInputStream());
+				Message message = (Message)ois.readObject();
+				//判断服务端返回的type值
+				if (message.getMessType().equals("1")) {
+					isLogin = "1";
+				}else {
+					isLogin = "2";
+				}
+				
+				
+			} catch (UnknownHostException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return isLogin;
+		
+	} 
+	
+	public void sendChatInfoToServer(Object o) {
+		Socket s = null;
+		try {
+			s = new Socket("localhost",5555);
+			ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
+//			Object o1 = new Object();
+			oos.writeObject(o);
+			
+			ObjectInputStream ois = new ObjectInputStream(s.getInputStream());	
+			Message message = (Message)ois.readObject();
+			
+			System.out.println("服务端返还的信息：" + message.getMessType());
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (ClassNotFoundException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}finally {
+			try {
+				if ( s != null) {
+					s.close();
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		clientSendServer c = new clientSendServer();
+	}
+}

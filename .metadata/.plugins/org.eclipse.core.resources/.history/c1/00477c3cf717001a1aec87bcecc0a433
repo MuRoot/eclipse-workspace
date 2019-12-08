@@ -1,0 +1,10 @@
+import java.io.File;
+
+public class DiGui {
+	public static void main(String[] args) {
+		Traverse();
+	}
+
+	private static void Traverse() {
+	}
+}
